@@ -7,7 +7,7 @@
           "header_title": "Elizabeth",
           "login": "Login",
           "show_cart": true,
-          "margin": 140,
+          "margin": 10,
           "background": "#f10b0b",
           "menu": "main-menu"
         }
