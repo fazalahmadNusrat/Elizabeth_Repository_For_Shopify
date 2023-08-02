@@ -8,7 +8,7 @@
           "login": "Login",
           "show_cart": true,
           "margin": 140,
-          "background": "#ffffff",
+          "background": "#f10b0b",
           "menu": "main-menu"
         }
       }
