@@ -4,10 +4,10 @@
       "header": {
         "type": "header",
         "settings": {
-          "header_title": "Header",
+          "header_title": "Elizabeth",
           "login": "Login",
           "show_cart": true,
-          "margin": 20,
+          "margin": 140,
           "background": "#ffffff",
           "menu": "main-menu"
         }
