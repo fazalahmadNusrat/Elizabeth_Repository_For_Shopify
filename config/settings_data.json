@@ -1,22 +1,5 @@
 {
-  "current": {
-    "sections": {
-      "header": {
-        "type": "header",
-        "settings": {
-          "header_title": "Elizabeth",
-          "login": "Login",
-          "show_cart": true,
-          "margin": 10,
-          "background": "{{ shop.brand.colors.primary[1].background }}",
-          "menu": "main-menu"
-        }
-      }
-    },
-    "content_for_index": [
-
-    ]
-  },
+  "current": "Default",
   "presets": {
     "Default": {
     }

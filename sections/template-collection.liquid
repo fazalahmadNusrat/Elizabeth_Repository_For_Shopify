@@ -1,0 +1,7 @@
+{% paginate collection.products by 6 %}
+  <a href="{{ product.url }}">{{ product.title }}</a>
+  {% for product in collection.products %}
+    <p>There are Not Products inside of collection</p>
+  {% endfor %}
+  {% render 'pagination', pagination: paginate %}
+{% endpaginate %}
