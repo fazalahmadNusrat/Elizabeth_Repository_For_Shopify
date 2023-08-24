@@ -1,16 +1,35 @@
-{% paginate collection.products by 6 %}
-  {% for product in collection.products %}
-    {% if product.featured_image %}
-      <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+<div class="px-4 py-8">
 
-    {% endif %}
-    <span>{{ product.vendor }}</span>
+  {% paginate collection.products by section.settings.number_of_product_per_page %}
+    <h1 class="text-3xl text-center">{{ collection.title }}</h1>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {% for product in collection.products %}
+          {% render 'product-cart': product_product: product %}
+          {% comment %} {% render 'product-cart':product:product %}
+          the first parameter of prodect it is belong to name of product-cart.liquid if we change the first name of prodect
+          we must change the name of product-cart.liquid every product {% endcomment %}
 
-    <a href="{{ product.url }}">{{ product.title }}</a>
-    <br>
-  {% else %}
+        {% else %}
 
-    <p>There are Not Products inside of collections</p>
-  {% endfor %}
-  {% render 'pagination' %}
-{% endpaginate %}
+          <p>There are Not Products inside of collections</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% render 'pagination', pagination: paginate %}
+  {% endpaginate %}
+</div>
+{% schema %}
+  {
+    "name": " Template Collection ",
+    "settings": [
+      {
+        "type": "number",
+        "label": "Number Of Product Per Page",
+        "id": "number_of_product_per_page",
+        "default": 6
+      }
+    ]
+  }
+{% endschema %}
