@@ -5,7 +5,7 @@
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {% for product in collection.products %}
-          {% render 'product-cart': product_product: product %}
+          {% render 'product-cart', product_product: product %}
           {% comment %} {% render 'product-cart':product:product %}
           the first parameter of prodect it is belong to name of product-cart.liquid if we change the first name of prodect
           we must change the name of product-cart.liquid every product {% endcomment %}
@@ -32,4 +32,13 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-cart': product_product: product %}"
+  to: "{% render 'product-cart', product_product: product %}"
+  position: 327..380
+{%- endcomment -%}
